@@ -1,0 +1,420 @@
+\documentclass[12pt,oneside]{book}
+
+\usepackage{ulamonog} %proyecto de grado
+%\usepackage[ansinew]{inputenc} % escribir acentos
+\usepackage[utf8]{inputenc}
+
+
+%\usepackage[activeacute,spanish]{babel}
+\usepackage{moreverb}
+
+\usepackage{color}
+\usepackage[colorlinks]{hyperref}
+\usepackage[spanish]{babel}
+\selectlanguage{spanish}
+\usepackage[utf8]{inputenc}
+\usepackage[numbers,sort]{natbib}
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+% ***************************************************************** %
+% En el siguiente comando se pueden modificar (para el archivo .pdf):
+% Titulo, Autor, Palabras clave
+% ***************************************************************** %
+
+% si se va a imprimir,
+% se incluye al final despues de citecolor=blue, el comando draft=true
+\hypersetup{pdftitle={Título de prueba: si es de verdad},
+pdfauthor={Autor},
+pdfsubject={Proyecto de Grado}, % se deja igual
+pdfkeywords={Palabras,claves,muchas,pocas}, pdfstartview=FitH,bookmarks=true, citecolor=blue, draft=true}
+
+% Si desea que no aparezca la lista de tablas o figuras descomente las siguientes lineas
+\nolistoftables
+\nolistoffigures
+
+% ***************************************************************** %
+% FIN DE
+% Titulo, Autor, Palabras clave
+% ***************************************************************** %
+
+
+\sloppy
+
+\begin{document}
+
+\frontmatter
+
+% ***************************************************************** %
+% Si sabe la fecha de presentación del Proyecto de Grado
+% con o sin comentar
+% ***************************************************************** %
+%\fechaentrega{Junio} % Si sabe cuando se presentó
+%\presentaciondia{2 de Junio} % si conoce exactamente el día
+%\presentacionlugar{Laboratorio 226 de EISULA} % si conoce exactamente el lugar donde se presentó
+% ***************************************************************** %
+% FIN DE
+% Si sabe la fecha de presentación
+% ***************************************************************** %
+
+% ***************************************************************** %
+% Si el Proyecto de Grado tiene mencion especial
+% con o sin comentar
+% ***************************************************************** %
+%\mencionespecial{Este proyecto fue seleccionado como \textbf{mejor proyecto de grado} de la Escuela de
+%Ingeniería de Sistemas, en el IC aniversario de la Facultad de Ingeniería.} % si tiene mención especial
+% ***************************************************************** %
+% FIN DE
+% Si sabe la fecha de presentación
+% con o sin comentar
+% ***************************************************************** %
+
+
+% ***************************************************************** %
+% Portada y resumen
+% ***************************************************************** %
+% Si desea el logo en la parte de abajo
+%\logoabajo
+
+% En caso de que el año sea diferente al actual, quite el comentario a la siguiente linea
+%\copyrightyear{2007}
+
+% Al final cuando hayan presentado, sin comentar
+% deberia ser el número de tesis presentada y la opción, IO por ejemplo
+% Numero del proyecto
+%\numproy{00IO}
+
+% Puede cambiar el tipo de monografía, por defecto: Proyecto de Grado
+%\tipomonografia{Informe Final de Proyecto de Grado}
+
+% En caso de hacer propuesta de proyecto, quitele el comentario a la
+% siguiente linea --- En este caso no aparece ni la hoja de presentacion
+% ni la hoja de dedicatoria
+%\propuesta
+
+% Si se utiliza este formato para hacer un informe técnico, descomente las siguientes líneas
+%\informe 
+\proyecto{Proyecto de Grado} % Por ejemplo, puede colocar el nombre del proyecto al que esta asociado el informe técnico
+            % Ejemplos: \proyecto{Convenio ULA PDVSA}
+            % \proyecto{Canalizaciones del río Chama. Asesoría Alcaldía Municipio Libertador}
+
+
+% Datos del proyecto de grado
+ \title{Reconocimiento multimodal de estados afectivos para el robot social LRS2}
+
+ \author{Nerio Moran}
+
+ \cedula{23.723.626}
+ \tutor{Prof. Jesús Pérez }
+ %\cotutor{Dra. Puede Haber}
+ \primerjurado{Dr. Primer Profesor}
+ \segundojurado{Prof. Segundo Profesor}
+% \tercerjurado{Prof. Tercer Profesor}
+
+% NO TOCAR si es Ingenieria de Sistemas
+% \grado{Ingeniero Químico} % por defecto Ingeniero de Sistemas
+% \tutorname{Asesor} % por defecto es Tutor
+
+%\signaturepage ----- NO TOCAR
+
+\resumen{ En este trabajo se presenta una propuesta para el reconocimiento de emociones a partir de señales multimodales, específicamente expresiones
+	faciales y el habla, en el contexto de interacción humano-robot. El problema
+	planteado hace parte de los estudios actuales que buscan mejorar la comunicación humano-robot mediante la inclusión de diferentes señales que permitan determinar el estado emocional de los humanos de una manera continua y precisa.
+	El sistema propuesto aplica técnicas de aprendizaje de máquina para
+	lograr la detección de emociones en una persona mientras interactúa con
+	el robot LRS2.}
+
+
+
+
+
+\descriptores{Interaccion Humano Robot, Aprendizaje de Maquina, emociones, Redes neuronales, Multimodal}
+
+%\cota{IXD A01.1}
+
+% Si es control y automatizacion se comenta la siguiente linea
+\opcion{Sistemas Computacionales}
+
+% ***************************************************************** %
+% FIN DE
+% Portada y resumen
+% ***************************************************************** %
+
+
+% ***************************************************************** %
+% Si tiene dedicatoria
+% con o sin comentar
+% ***************************************************************** %
+\dedicatoria{No hay dedicatoria todavia}
+% ***************************************************************** %
+% FIN DE
+% Si tiene dedicatoria
+% ***************************************************************** %
+
+\beforepreface
+
+% ***************************************************************** %
+% Agradecimientos y primer capitulo (sin numeracion)
+% ***************************************************************** %
+%\prefacesection{Agradecimientos}
+
+%En esta sección se agradece a las personas que contribuyeron a llevar a buen final este trabajo.
+
+%%% Capitulo sin numero, antes de la pagina 1
+\prefacesection{Introducción}
+%Un párrafo de introducción al área de trabajo (4 líneas)
+Dentro del área de la interacción humano-robot, se ha generado una gran iniciativa de investigación en la detección de emociones, esto bajo la justificación de acortar la brecha de comunicación entre humanos y robots. Mejorar la capacidad de interacción mediante el reconocimiento del estado emocional del humano es de gran importancia para permitir que los robots puedan desempeñar tareas cooperativas y de una manera natural con los humanos.\\
+
+ Actualmente las áreas de aplicación para la interacción humano-robot son diversas y se mantienen en expansión. Alguna de ellas: robots sociales, entornos inteligentes, enseñanza, terapias y tratamientos, asistencia entre otros. \\
+
+ La importancia que ha adquirido durante los últimos años la interacción entre humanos y robots es debido a la necesidad de desarrollar tareas de cooperación entre ellos, de tal forma que cualquier persona pueda interactuar de forma natural sin la necesidad de entender el robot.\\
+
+ La creación de sistemas lo suficiente robustos para permitir este tipo de interacción requieren de distintas señales de entrada independientes que se transformaran en información multimodal. El procesamiento de información proveniente de múltiples fuentes es un problema que se encuentra en diferentes áreas de investigación como la inteligencia artificial y la robótica.
+
+
+   
+\afterpreface 
+
+\pagestyle{fancyplain}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{\textsc{\footnotesize\thechapter\ #1}}}
+\renewcommand{\sectionmark}[1]{\markright{\textsc{\footnotesize\thesection\ #1}}}
+\lhead[\fancyplain{}{\textsc{\footnotesize\thepage}}]%
+{\fancyplain{}{\rightmark}}
+\rhead[\fancyplain{}{\leftmark}]%
+{\fancyplain{}{\textsc{\footnotesize\thepage}}} \cfoot{}
+
+\mainmatter
+  
+\chapter{Planteamiento del problema}
+\section{Antecedentes}
+%Referencia a todos los trabajos (\emph{Recientes, < 4 años})
+%Quien ha trabajado en ese tema. ¿Qué hizo? ¿Cómo lo hizo?
+%¿Qué métodos utilizó?
+
+Los antecedentes de esta investigación se dividen principalmente en dos categorías: primero, trabajos relacionados con el desarrollo de modelos de aprendizaje para distintos tipos de señales de entrada; segundo, investigaciones que utilizan mas de 1 señal de entrada en sistemas de reconocimiento multimodal.
+
+%Mismo estilo para números y títulos
+
+Faria (2017) \citep{faria} realizo un articulo titulado ``Affective Facial Expressions Recognition for Human-Robot Interaction'' en el cual desarrollo un marco de trabajo para el reconocimiento de emociones en la interacción humano-robot. Para el marco de trabajo utilizo una base de datos ``Karolinska Directed Emotional Faces (KDEF)'', la cual utilizo para entrenar mediante aprendizaje supervisado el clasificador. El modelo se enfoco en detectar las 7 emociones universales, para esto utilizaron un modelo dinámico bayesiano mezclado, el cual es una especialización de las redes dinámicas bayesianas.
+
+
+Razuri \citep{Rzuri2015SpeechER} estudio las características cruciales del habla para el reconocimiento de emociones es su investigación titulada ``Speech emotion recognition in emotional feedback
+for Human-Robot Interaction''. En su investigación utilizo diferentes tipos clasificadores para probar cuales de ellos se acercaba a un sistema de tiempo real, la base de datos de entrenamiento fue eNTERFACE05. La investigación tuvo como conclusión que los clasificadores: Maquina de vectores de soporte (SVM) y las redes bayesianas  son buenos candidatos para los sistemas de tiempo real.
+
+Por otro lado, Ménard (2015) \citep{Menard} utilizo como señales de entrada el ritmo cardiaco y la conductancia de la piel para determinar las emociones en su investigación titulada ``Emotion Recognition Based on Heart Rate and Skin Conductance ''. Ambas entradas fueron usadas en clasificadores distintos, crearon su propia base de datos utilizando sensores de respuesta biológica. Utilizaron como clasificador para ambas entradas una maquina de vectores de soporte (SVM) y el cual fue entrenado con los coeficientes de fourier de ambas entradas. Se determin\'o que ambas entradas fisiológicas sirven como fuente de información para determinar una emoción y a diferencia de otras entradas como la voz o la imagen digital estas señales tienen disponibilidad continua.
+
+
+En los sistemas de reconocimiento multimodal \citep{Perez} en su tesis de maestria titulada ``Identificación de señales multimodales
+para reconocimiento de emociones en el
+contexto de interacción humano-robot '', realiza un sistema de reconocimiento bimodal cuyas entradas son imágenes y el habla. Para las imágenes utiliza una red neuronal convolucional y para el habla utiliza una maquina de vectores de soporte (SVM). Para la de fusión utiliza un sistema basado en decisiones basándose en el resultado de ambas entradas.
+
+
+Castillo (2018) \citep{Castillo} en su investigacion titulada ``Emotion Detection and Regulation from Personal Assistant Robot in Smart Environment" realiza un diseño para un robot social asistente el cual cuenta con sistema de reconocimiento bimodal basado en imágenes y el habla. Para detectar la emoción del usuario con el que interactuá utiliza la representación continua de las emociones basada en valencia y excitación, solo detecta 4 estados emocionales: Sorpresa, Felicidad, tristeza y neutralidad. Las características del audio fueron: Pitch, Flux, Rolloff-95, Centroid, Zero-crossing rat, SNR y el ritmo comunicativo. Para el audio se utilizaron dos modelos de clasificación uno basado en un árbol de decisión y el otro basado en reglas de decisión. Para el reconocimiento de las imágenes utilizaron dos softwares CERT y SHORE. En el componete de fusión utilizaron un método basado en reglas de decisión.
+
+
+\begin{comment}
+	
+
+ 	
+ 
+\section{Planteamiento del problema}
+Existen actualmente varios trabajos relacionados con la construcción de manipuladores industriales en la Universidad de Los Andes. Es común ver que estos trabajos culminan sin aplicación de alguna técnica de control; esto no es conveniente debido a que para trabajos donde se necesita precisión puede que no cumpla el objetivo.\\
+
+En investigaciones internacionales si se han dedicado a cerrar el lazo, utilizando técnicas de control como Proporcional-Integral-Derivativo  (PID), Adelanto-Atraso, Ziegler-Nichols , entre otros; recientemente hay interés por aplicar computación inteligente en el control de procesos debido a que muchas aplicaciones actuales requieren precisión, es por eso que es bien recibido en la comunidad científica, innovaciones que permitan mejorar la precisión.\\
+
+Debido también a la imprecisión del brazo diseñado en el 2015 en El Laboratorio de Sistemas Discretos Automatización e Integración (LaSDAI) de la Universidad de Los Andes, se cree necesario la realización de un brazo desde cero, el cual si presente técnicas de control necesarias para garantizar la realización del mismo.\\ 
+
+Es por eso que el problema que se aborda en este Trabajo de Grado es sobre el uso de controladores en brazos industriales, sobre todo los controladores que se benefician de la inteligencia artificial para su funcionamiento. Lo que se persigue es elaborar una red neuronal que utilice el algoritmo de propagación hacia atrás con el fin de que la red sirva como auto sintonizador, para poder encontrar los parámetros necesarios de un controlador PID; aparte se elaborara un controlador PID clásico para poder realizar la comparación entre ambas técnicas en este brazo.
+
+
+\section{Objetivos}
+El objetivo general de este trabajo es: Evaluar algoritmos de control en un brazo robótico de tres grado de libertad.\\
+
+Para cumplir con el objetivo general se require cumplir con los siguientes objetivos específicos:
+%En este trabajo nos hemos planteado el siguiente objetivo general:
+
+%Todo objetivo debe empezar con un verbo en su forma infinitiva,
+%ejemplo: estudiar, definir, desarrollar, analizar, implementar
+
+%Cada objetivo, general o específico debe representar algo
+%específico sin dejar posibilidad a ambigüedades.
+
+%Para cumplir con el objetivo planteado se require cumplir con los
+%siguientes objetivos específicos:
+
+\begin{itemize}
+\item Diseñar un brazo robótico de tres grados de libertad utilizando Inventor.
+
+\item Encontrar su modelo de cinemática directa utilizando los parámetros de Denavit-Hatemberg .
+
+\item Encontrar su modelo de cinemática inversa usando métodos geométricos.
+
+\item Implementar un prototipo que cumpla con las exigencia de los requerimientos funcionales y no funcionales.
+
+\item Diseñar la interfaz donde se podrá manejar el manipulador.
+
+\item Diseñar un controlador Proporcional-Integral-Derivativo  (PID)  clásico con el fin de controlar la posición final de la herramienta.
+
+\item Diseñar una red neuronal de tres capas la cual sirva como auto sintonizador para obtener los parámetros óptimos de un PID.
+
+\item Comparar la precisión entre ambos algoritmos.
+%\item Cada objetivo específico representa una actividad o tarea
+%general del trabajo que se va a realizar. 
+
+\end{itemize}
+
+\section{Metodología}
+
+\subsection{Fase diagnóstico}
+
+\begin{itemize}
+\item Revisión de artículos para buscar trabajos relacionados.
+
+\item Revisión de libros para la extracción de las teorías necesarias.
+
+\end{itemize}
+\subsection{Fase de diseño}
+\begin{itemize}
+
+
+\item Especificar los requerimientos funcionales y no funcionales tanto de software como de hardware.
+
+\item Diseñar el brazo en Inventor.
+
+\item Encontrar el modelo de cinemática directa.
+
+\item Encontrar el modelo de cinemática inversa.
+
+\item Diseñar la interfaz gráfica.
+
+\item Diseñar controlador PID clásico.
+
+\item Diseñar controlador PID utilizando red neuronal como auto sintonizador.
+
+\end{itemize}
+
+\subsection{Fase de implementación}
+\begin{itemize}
+\item Implementar prototipo con material reciclado.
+
+\item Implementar prototipo final.
+
+\item Implementar software.
+\end{itemize}
+
+\subsection{Fase de pruebas}
+\begin{itemize}
+\item Especificar pruebas que se realizaran.
+
+\item Aplicar las pruebas.
+
+\item Analizar resultados.
+\end{itemize}
+
+
+\section{Cronograma de actividades}
+
+En la Tabla~\ref{tab:TablaCronogramaActividades} se muestra el cronograma de trabajo asociado a la fases de desarrollo del proyecto.
+\begin{table}[!ht]
+\centering
+\label{tab:actividades}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Actividades} & \textbf{1} & \textbf{2}&\textbf{3} & \textbf{4} &\textbf{5} & \textbf{6}& \textbf{7} & \textbf{8}& \textbf{9} & \textbf{10}& \textbf{11} & \textbf{12}& \textbf{13} & \textbf{14}& \textbf{15} & \textbf{16} \\ \hline
+Revisión de documentación & x& x& & & & & & & & & & & & & &\\ \hline
+Diseño en inventor & & &x&x& & & & & & & & & & & & \\ \hline
+Estudio cinemática directa & & & &x& & & & & & & & & & & &\\ \hline
+Estudio cinemática inversa & & & & &x& & & & & & & & & & &\\ \hline
+Crear interfaz gráfica & & & & & &x &x & & & & & & & & &\\ \hline
+Diseñar controlador (PID) & & & & & & & &x& & & & & & & &\\ \hline
+Diseñar Red neuronal & & & & & & & & &x& & & & & & & \\ \hline
+Entrenar Red neuronal & & & & & & & & &x&x& & & & & & \\ \hline
+Aplicar pruebas & & & & & & & & & & &x&x&x& & &\\ \hline
+Analizar resultados & & & & & & & & & & & & & &x&x& \\ \hline
+Entrega del trabajo & & & & & & & & & & & & & & & &x\\ \hline
+\end{tabular}
+\caption{Cronograma de actividades}
+\label{tab:TablaCronogramaActividades}
+\end{table}
+
+
+
+
+
+
+\section{Cronograma de evaluaciones}
+
+En la Tabla~\ref{tab:TablaCronogramaEvaluaciones} se muestra el cronograma de trabajo asociado a la evaluación del proyecto.
+
+
+\begin{table}[!ht]
+\centering
+\label{tab:actividades}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\textbf{Actividades} & \textbf{1} & \textbf{2}&\textbf{3} & \textbf{4} &\textbf{5} & \textbf{6}& \textbf{7} & \textbf{8}& \textbf{9} & \textbf{10}& \textbf{11} & \textbf{12}& \textbf{13} & \textbf{14}& \textbf{15} & \textbf{16} \\ \hline
+Avances con el tutor & x & x &x &x &x &x &x &x &x &x &x &x &x &x &x &x \\ \hline
+Entrega de propuesta &x &x & & & & & & & & & & & & & &\\ \hline
+Avance con los jurados & & & & & & & &x & & & & & & & &\\ \hline
+Presentación final & & & & & & & & & & & & & & & &x \\ \hline
+\end{tabular}
+\caption{Cronograma de Evaluaciones}
+\label{tab:TablaCronogramaEvaluaciones}
+\end{table}
+
+
+%Ejemplo de citas \citep{Stall:04}
+
+
+%\emph{Ejemplo de itálicas}
+
+
+%\bf{Ejemplo de negritas}
+
+
+
+
+
+% ***************************************************************** %
+% FIN DE
+% Agradecimientos y primer capitulo (sin numeracion)
+% ***************************************************************** %
+
+
+
+
+
+
+% ***************************************************************** %
+% Cuerpo
+% ***************************************************************** %
+
+%\input{capitulo1}
+%\input{capitulo2}
+%\input{capitulo3}
+%\input{capitulo4}
+%\input{capitulo5}
+\end{comment}
+%\bibliographystyle{apalikesp}
+\bibliographystyle{IEEEannot}
+
+% ***************************************************************** %
+% Para agregar toda la bibliografia del archivo .bib
+% solo descomente el siguiente comando
+\nocite{*}
+% ***************************************************************** %
+% ***************************************************************** %
+
+
+\bibliography{bibliografia}
+
+% ***************************************************************** %
+% FIN DE
+% Cuerpo
+% ***************************************************************** %
+\appendix
+\scriptsize
+%\verbatimtabinput[4]{pi.h}
+%\subsection{sch\_pi.c}
+%\verbatimtabinput[4]{sch\_pi.c}
+
+\end{document}
